@@ -35,9 +35,8 @@ class RoundedMaterialTextFormField extends StatelessWidget {
       validator: validator,
       focusNode: focus,
       obscureText: obscureText,
-      textInputAction: this.textInputAction ?? nextFocus != null
-          ? TextInputAction.next
-          : TextInputAction.done,
+      textInputAction: this.textInputAction ??
+          (nextFocus != null ? TextInputAction.next : TextInputAction.done),
       onFieldSubmitted: (v) {
         if (this.nextFocus != null) {
           FocusScope.of(context).requestFocus(this.nextFocus);
